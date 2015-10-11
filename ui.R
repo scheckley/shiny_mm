@@ -1,3 +1,4 @@
+#shinyapps::deployApp("/media/stephen/2AB4135CB4132A39/Users/schec/My Documents/coursera/data products/enzyme_kinetics/shiny_mm")
 library(shiny)
 
 #define the user interface
@@ -18,7 +19,7 @@ shinyUI(fluidPage(
   #Show the plot
   mainPanel(
     tabsetPanel(
-      tabPanel("model",
+      tabPanel("Model",
       img(src="mechanism.png"),
       plotOutput("kinetics_plot")
       ),
@@ -50,6 +51,7 @@ shinyUI(fluidPage(
         "The calculations are the same as those performed daily by enzyme kineticists the world over, and apps such as this are useful experimental tools."),
       
       strong("The parameters for the simulation are as follows:"),
+      br(),
       img(src="mechanism.png"),
       
       p("k1 forward = forward rate for substrate [S] binding to enzyme[E], forming an enzyme-substrate complex [ES]."),
@@ -63,8 +65,8 @@ shinyUI(fluidPage(
         "1 to 100 are recommended simulation times."),
       
       h3("epilogue"),
-      p("Enzyme kinetics is a huge field. For a much better description, take a look at the wikipedia page: https://www.wikiwand.com/en/Enzyme_kinetics,", 
-        "or a nice commemorative article on the classic 1913 manuscript by Michaelis and Menten: http://onlinelibrary.wiley.com/doi/10.1111/febs.12598/pdf")
+      p("Enzyme kinetics is a huge field. For a much better description take a look at the", a("Wikipedia page",href="https://www.wikiwand.com/en/Enzyme_kinetics"), 
+        ", or a nice commemorative article on the", a("classic 1913 manuscript by Michaelis and Menten.", href="http://onlinelibrary.wiley.com/doi/10.1111/febs.12598/pdf"))
       )
     )
   )
